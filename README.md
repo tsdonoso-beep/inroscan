@@ -1,5 +1,9 @@
 # InroScan
 
+> **Se mudó a [Inroprin-Apps/InroScan](https://github.com/Inroprin-Apps/InroScan)** el
+> 28-oct-2026 y se publica en <https://inroprin-apps.github.io/InroScan/web/>.
+> Este repositorio queda como historial; su sitio solo redirige allá.
+
 El sistema de rendiciones de INROPRIN (Roland Print): **caja chica** y **memos
 de viáticos**. Se captura el comprobante (foto o PDF, desde el teléfono o la
 PC), se lee solo, la persona revisa lo que falte y lo envía; administración lo

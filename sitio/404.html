@@ -4,11 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>InroScan</title>
-<!-- Cualquier dirección vieja (/inroscan/app/…, /inroscan/spike/…) termina en la app. -->
-<script>location.replace("/inroscan/web/");</script>
+<!-- InroScan se mudó a https://inroprin-apps.github.io/InroScan/web/. Cualquier
+     dirección vieja lleva a la misma página en la nueva (/inroscan/web/rendicion/?id=…
+     → /InroScan/web/rendicion/?id=…). -->
+<link rel="canonical" href="https://inroprin-apps.github.io/InroScan/web/">
+<script>
+  var resto = location.pathname.replace(/^\/inroscan\/?/i, "");
+  location.replace("https://inroprin-apps.github.io/InroScan/" + (resto || "web/") + location.search + location.hash);
+</script>
 <style>body{font:16px system-ui,sans-serif;background:#edf1f4;color:#101a24;display:grid;place-items:center;min-height:100vh;margin:0}a{color:#007a72}</style>
 </head>
 <body>
-<p>Esa página ya no existe. <a href="/inroscan/web/">Abrir InroScan</a>.</p>
+<p>InroScan se mudó: <a href="https://inroprin-apps.github.io/InroScan/web/">abrir InroScan</a>.</p>
 </body>
 </html>

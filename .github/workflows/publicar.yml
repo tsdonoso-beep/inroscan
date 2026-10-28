@@ -1,7 +1,8 @@
 name: Publicar
 
-# Publica InroScan en GitHub Pages bajo /inroscan/web/. La raíz solo
-# redirige ahí: la app anterior se retiró el 26-oct-2026.
+# InroScan se mudó a Inroprin-Apps/InroScan (https://inroprin-apps.github.io/InroScan/web/).
+# Este repositorio solo publica páginas que redirigen allá, y un trabajador
+# que da de baja la app guardada en los equipos que la usaron acá.
 # Requiere que en Settings › Pages la fuente sea «GitHub Actions», y que el
 # entorno github-pages permita desplegar desde estas ramas.
 on:
@@ -30,19 +31,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-          cache-dependency-path: web/package-lock.json
-      - run: npm ci && npm run build
-        working-directory: web
-      # Solo lo que se sirve: ni migraciones, ni el procesador, ni documentos.
       - name: Armar el sitio
         run: |
           mkdir _sitio
-          cp sitio/index.html sitio/404.html _sitio/
-          cp -r web/out _sitio/web
+          cp -r sitio/. _sitio/
           touch _sitio/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
